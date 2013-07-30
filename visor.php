@@ -18,13 +18,9 @@
 			$Nombre = $_POST['txtNombre'];
 			$Edad = $_POST['txtEdad'];
 			$Sexo = $_POST['Genero'];			
-			$Nota = $_POST['txtNota'];			
-			$numerolinea = 0;
-			$archivo = fopen("grupo9.txt","a");	
-			foreach ($archivo as $numero => $linea) 
-			{$numerolinea = $numero + 1;}
-			$contenido="\n\r$numerolinea$Nombre,$Edad,$Sexo,$Nota";
-					
+			$Nota = $_POST['txtNota'];		
+			$archivo = fopen("grupo9.txt","a");			
+			$contenido="\n\r$Nombre,$Edad,$Sexo,$Nota";				
 			fputs($archivo,$contenido);
 			fclose($archivo);
 		?>
