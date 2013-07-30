@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>::Proyecto_1::</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+<script language="JavaScript" type="text/javascript">
+var txt="::Proyecto 1::...::Grupo 9::...";
+var refresco=null;
+function titulo() {
+document.title=txt;
+txt=txt.substring(1,txt.length)+txt.charAt(0); 
+refresco=setTimeout("titulo()",200);}
+titulo();
+
+function valida_envia(){
+	if(document.frm.txtNombre.value == "") 
+	{
+		alert("Por favor indique su nombre");
+		document.frm.txtNombre.focus();
+		return 0;
+	}
+	if(document.frm.txtEdad.value == "") 	
+	{
+		alert("Por favor indique su edad");
+		document.frm.txtEdad.focus();
+		return 0;
+	}
+	if(document.frm.Genero.value == "") 
+	{
+		alert("Por favor indica su sexo");
+		document.frm.Genero.focus();
+		return 0;
+	}
+	if(document.frm.txtNota.value == "") 
+	{
+		alert("Por favor indica su nota");
+		document.frm.txtNota.focus();
+		return 0;
+	}
+	alert("Muchas gracias por enviar el formulario");
+	document.frm.submit(); 
+	return true;
+}
+
+function soloLetras(e)
+	{
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = [8,37,39,46];
+       tecla_especial = false
+       for(var i in especiales)
+		{
+            if(key == especiales[i])
+			{
+                tecla_especial = true;
+                break;
+			}
+        }
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+	function soloNumeros(e)
+	{
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = "0123456789";
+       especiales = [8,37,39,46];
+       tecla_especial = false
+       for(var i in especiales)
+		{
+            if(key == especiales[i])
+			{
+                tecla_especial = true;
+                break;
+			}
+        }
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+</script>
+</head>
+
+<body>
+ 
+<div id="head">
+<ul>
+     <li><a class="active" href="index.html">Ingreso de Datos</a></li>
+     <li><a href="about.html">Ver Resultado</a></li>   
+   </ul>
+ <div id="head_cen">     
+  <div id="head_sup" class="head_height">
+      <h1 class="logo"><a href="index.html">Ingreso de Datos</a></h1>   
+	  <CENTER>
+		<FORM method=post action="visor.php" name="frm">      
+			<TABLE BORDER=0>
+				<TR>
+					<TD><h4>Nombre: </h4></TD>
+					<TD><INPUT type=text name="txtNombre" size="30" onkeypress="return soloLetras(event)"></TD>
+				</TR>
+				<TR>
+					<TD><h4>Edad:</h4></TD>
+					<TD><INPUT type=text name="txtEdad" size="2" onkeypress="return soloNumeros(event)"MAXLENGTH="2"></TD>
+				</TR>
+				<TR>
+					<TD><h4>Sexo:</h4> </TD>
+					<TD><h4>Hombre: <INPUT type=radio name="Genero" value="M" > Mujer: <INPUT type=radio name="Genero" value="F"></h4></TD>
+				</TR>
+				<TR>
+					<TD><h4>Nota:</h4></TD>
+					<TD><INPUT type=text name="txtNota" size="3"onkeypress="return soloNumeros(event)" MAXLENGTH="3"></TD>
+				</TR>
+				<TR>
+					<TD></TD><TD COLSPAN=2><INPUT type="button" value="Enviar" onclick="valida_envia()"></TD>
+				</TR>			
+			</TABLE>		
+		</FORM>
+	  </CENTER>
+	</div>  
+ </div>
+</div>
+
+<div id="foot">
+ <div id="foot_cen"> 
+ <ul>
+	 <Center>
+	 <li><a class="active" href="index.html">Ingreso de Datos</a></li>
+	 <li class="space">|</li>
+     <li><a href="about.html">Ver Resultado</a></li>       
+	 </center>
+   </ul>
+    <center><p>© Your Copyright Info Here. Designed by: <a href="http://www.templateworld.com" target="_blank">Template World</a></p></center>
+ </div>
+</div>
+</body>
+</html>

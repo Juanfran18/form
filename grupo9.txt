@@ -1,0 +1,12 @@
+
+juan,33,M,99,
+
+lopez,88,M,000,
+
+lopez,88,M,000
+0juan,20,M,44
+0juan,20,M,44
+
+0juan,20,M,44
+0juan,20,M,44
+0juan,20,M,44
